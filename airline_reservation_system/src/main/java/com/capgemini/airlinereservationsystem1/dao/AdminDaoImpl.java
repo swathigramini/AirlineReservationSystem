@@ -23,16 +23,15 @@ public class AdminDaoImpl implements AdminDao {
 	private HashMap<Integer, Admin> adminData = repository.adminData;
 	private HashMap<Integer, Manager> managerData = repository.managerData;
 
-	public boolean adminLogin(int adminId, String adminPassword) {
+	public boolean adminLogin(String adminName, String adminPassword) {
 		try {
 			Iterator<Map.Entry<Integer, Admin>> iterator = adminData.entrySet().iterator();
 
 			while (iterator.hasNext()) {
 
 				Map.Entry<Integer, Admin> entry = iterator.next();
-				if (adminId == (entry.getValue().getAdminId())
+				if (adminName == (entry.getValue().getAdminName())
 						&& adminPassword.equals(entry.getValue().getAdminPassword())) {
-
 					return true;
 				}
 
@@ -56,19 +55,19 @@ public class AdminDaoImpl implements AdminDao {
 			managerData.put(i + 1, manager);
 			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		return false;
 	}// end of addFlightOwner
 
-	public boolean addFlightCheck(int managerId) {
+	public boolean addFlightCheck(String managerName) {
 		try {
 			Iterator<Map.Entry<Integer, Manager>> iterator = managerData.entrySet().iterator();
 
 			while (iterator.hasNext()) {
 
 				Map.Entry<Integer, Manager> entry = iterator.next();
-				if (managerId == (entry.getValue().getManagerId())) {
+				if (managerName == (entry.getValue().getManagerName())) {
 					return true;
 				}
 
@@ -79,7 +78,7 @@ public class AdminDaoImpl implements AdminDao {
 		return false;
 	}// end of addFlightCheck
 
-	public boolean deleteManager(int managerId) {
+	public boolean deleteManager(String managerName) {
 		try {
 			Iterator<Map.Entry<Integer, Manager>> iterator = managerData.entrySet().iterator();
 
@@ -87,7 +86,7 @@ public class AdminDaoImpl implements AdminDao {
 
 				Map.Entry<Integer, Manager> entry = iterator.next();
 
-				if (managerId == (entry.getValue().getManagerId())) {
+				if (managerName == (entry.getValue().getManagerName())) {
 					iterator.remove();
 					return true;
 				}
@@ -99,7 +98,7 @@ public class AdminDaoImpl implements AdminDao {
 		return false;
 	}// end of delete Manager
 
-	public boolean updateFlightCheck(int managerId) {
+	public boolean updateFlightCheck(String managerName) {
 		try {
 			Iterator<Map.Entry<Integer, Manager>> iterator = managerData.entrySet().iterator();
 
@@ -107,7 +106,7 @@ public class AdminDaoImpl implements AdminDao {
 
 				Map.Entry<Integer, Manager> entry = iterator.next();
 
-				if (managerId == (entry.getValue().getManagerId())) {
+				if (managerName == (entry.getValue().getManagerName())) {
 					iterator.remove();
 					return true;
 				}

@@ -35,7 +35,7 @@ public class ManagerController {
 			while (true) {
 				System.out.println("*************************");
 				System.out.println("Enter Manager id :");
-				Integer sId = validator.validateId(scanner.next());
+				boolean sId = validator.validateId(scanner.next());
 				if (sId != null) {
 					managerId = sId;
 					break;

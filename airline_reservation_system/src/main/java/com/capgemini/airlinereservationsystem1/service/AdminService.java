@@ -7,15 +7,15 @@ import com.capgemini.airlinereservationsystem1.bean.Manager;
 import com.capgemini.airlinereservationsystem1.bean.Passenger;
 
 public interface AdminService {
-	public boolean adminLogin(int adminId, String adminPassword);
+	public boolean adminLogin(String adminName, String adminPassword);
 
 	public boolean addManager(Manager manager);
 
-	public boolean addFlightCheck(int managerId);
+	public boolean addFlightCheck(String managerName);
 
-	public boolean deleteManager(int managerId);
+	public boolean deleteManager(String name);
 
-	public boolean updateFlightCheck(int managerId);
+	public boolean updateFlightCheck(String managerName);
 
 	public void updateManager(Manager manager);
 

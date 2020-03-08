@@ -10,15 +10,15 @@ import com.capgemini.airlinereservationsystem1.bean.Passenger;
 import com.capgemini.airlinereservationsystem1.bean.Ticket;
 
 public interface AdminDao {
-	public boolean adminLogin(int adminId, String adminPassword);
+	public boolean adminLogin(String adminName, String adminPassword);
 
 	boolean addManager(Manager manager);
 
-	boolean addFlightCheck(int managerId);
+	boolean addFlightCheck(String managerName);
 
-	boolean deleteManager(int managerId);
+	boolean deleteManager(String managerName);
 
-	boolean updateFlightCheck(int managerId);
+	boolean updateFlightCheck(String managerName);
 
 	boolean updateManager(Manager manager);
 

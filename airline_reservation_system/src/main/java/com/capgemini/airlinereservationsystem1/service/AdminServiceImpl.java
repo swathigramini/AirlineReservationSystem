@@ -11,24 +11,24 @@ public class AdminServiceImpl implements AdminService{
 	
 	AdminDao adminDao=new AdminDaoImpl();
 
-	public boolean adminLogin(int adminId, String adminPassword) {
-		return adminDao.adminLogin(adminId, adminPassword);
+	public boolean adminLogin(String adminName, String adminPassword) {
+		return adminDao.adminLogin(adminName, adminPassword);
 	}
 
 	public boolean addManager(Manager manager) {
 		return adminDao.addManager(manager);
 	}
 
-	public boolean addFlightCheck(int managerId) {
-		return adminDao.addFlightCheck(managerId);
+	public boolean addFlightCheck(String managerName) {
+		return adminDao.addFlightCheck(managerName);
 	}
 
-	public boolean deleteManager(int managerId) {
-		return adminDao.deleteManager(managerId);
+	public boolean deleteManager(String managerName) {
+		return adminDao.deleteManager(managerName);
 	}
 
-	public boolean updateFlightCheck(int managerId) {
-		return adminDao.updateFlightCheck(managerId);
+	public boolean updateFlightCheck(String managerName) {
+		return adminDao.updateFlightCheck(managerName);
 	}
 
 	public void updateManager(Manager manager) {
